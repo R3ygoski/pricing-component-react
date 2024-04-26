@@ -1,0 +1,27 @@
+@use './scss/abstract/var' as v;
+@import './scss/abstract/reset';
+
+@import './scss/component/App';
+@import './scss/component/Card';
+@import './scss/component/Toggler';
+
+#root {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  padding: 4rem 1.5rem;
+  background-color: v.$very-light-grayish-blue;
+  background-image: 
+    url('/src/assets/svg/bg-top.svg'), 
+    url('/src/assets/svg/bg-bottom.svg');
+  background-repeat: no-repeat;
+  background-position: top -3vh right -50vw, bottom -50vh left -20vw;
+}
+
+@media (min-width: 1440px) {
+  #root {
+    background-position: top 0vh right 0vw, bottom 0vh left 0vw;
+  }
+}

@@ -1,0 +1,102 @@
+@use '../abstract/var' as v;
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 32rem;
+    padding: 2rem 1.8rem;
+    border-radius: 1rem;
+    background-color: v.$white;
+    &__title {
+        font-size: 1.25rem;
+        color: v.$grayish-blue;
+    }
+    &__price {
+        display: flex;
+        align-items: center;
+        margin-top: 1rem;
+        font-size: 4.5rem;
+        color: v.$dark-grayish-blue;
+        &__dollar {
+            font-size: 2.5rem;
+        }
+    }
+    &__features {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 2.5rem;
+        &__feature {
+            // display: flex;
+            // align-items: center;
+            // justify-content: space-between;
+            width: 100%;
+            padding: 1rem 0;
+            color: v.$dark-grayish-blue;
+            border-top: 1px solid v.$light-grayish-blue;
+            border-bottom: 1px solid v.$light-grayish-blue;
+            text-align: center;
+            &:nth-child(2) {
+                border-top: none;
+                border-bottom: none;
+            }
+        }
+    }
+    &__button {
+        width: 100%;
+        margin-top: 1.25rem;
+        padding: 0.75rem 0;
+        border-radius: 0.5rem;
+        font-size: 0.9375rem;
+        text-transform: uppercase;
+        background: v.$gradient-side;
+        color: v.$very-light-grayish-blue;
+        border: 1px solid v.$purple;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background: transparent;
+            color: v.$purple;
+            border: 1px solid v.$purple;
+        }
+    }
+}
+
+.card-alternative {
+    background: v.$gradient;
+    .card__title {
+        color: v.$very-light-grayish-blue;
+    }
+    .card__price {
+        color: v.$very-light-grayish-blue;
+    }
+    .card__features {
+        &__feature {
+            color: v.$very-light-grayish-blue;
+        }
+    }
+    .card__button {
+        background: v.$very-light-grayish-blue;
+        color: v.$purple;
+        &:hover {
+            background: transparent;
+            color: v.$very-light-grayish-blue;
+            border: 1px solid v.$very-light-grayish-blue;
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .card {
+        max-width: 22rem;
+        height: 28rem;
+    }
+    .card-alternative {
+        height: 30rem;
+    }
+}
